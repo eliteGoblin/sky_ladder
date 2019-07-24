@@ -1,5 +1,7 @@
 package amazon
 
+import "errors"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -23,4 +25,34 @@ func min(a ...int) int {
 		}
 	}
 	return m
+}
+
+type stack []interface{}
+
+func NewStack(cap int) *stack {
+	s := make(stack, 0, cap)
+	return &s
+}
+
+func (s *stack) Push(v interface{}) {
+	*s = append(*s, v)
+}
+
+func (s *stack) Pop() error {
+	if len(*s) == 0 {
+		return errors.New("underflow")
+	}
+	*s = (*s)[:len(*s)-1]
+	return nil
+}
+
+func (s *stack) Top() (interface{}, error) {
+	if len(*s) == 0 {
+		return struct{}{}, errors.New("underflow")
+	}
+	return (*s)[len(*s)-1], nil
+}
+
+func (s *stack) Len() int {
+	return len(*s)
 }
