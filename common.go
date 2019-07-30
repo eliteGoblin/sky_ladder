@@ -2,6 +2,13 @@ package amazon
 
 import "errors"
 
+const (
+	uint32Max = ^uint32(0)
+	int32Max  = int32(uint32Max >> 1)
+	uintMax = ^uint(0)
+	intMax  = int(uint32Max >> 1)
+)
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
