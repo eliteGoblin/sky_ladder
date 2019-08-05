@@ -1,7 +1,7 @@
 package amazon
 
 func productExceptSelf(nums []int) []int {
-	res := make([]int.len(nums))
+	res := make([]int, len(nums))
 	if len(nums) == 0 {
 		return nums
 	}

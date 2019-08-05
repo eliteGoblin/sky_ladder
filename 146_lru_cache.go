@@ -8,7 +8,7 @@ type LRUCache struct {
 	capacity int
 }
 
-func Constructor(capacity int) LRUCache {
+func LRUConstructor(capacity int) LRUCache {
 	return LRUCache{
 		mp:       make(map[int]*list.Element),
 		list:     list.New(),
