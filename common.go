@@ -8,9 +8,10 @@ import (
 const (
 	uint32Max = ^uint32(0)
 	int32Max  = int32(uint32Max >> 1)
-	uintMax = ^uint(0)
-	intMax  = int(uint32Max >> 1)
-	intMin  = -intMax - 1
+	int32Min  = -int32Max - 1
+	uintMax   = ^uint(0)
+	intMax    = int(uintMax >> 1)
+	intMin    = -intMax - 1
 )
 
 type ListNode struct {
@@ -68,7 +69,6 @@ func (s *stack) Len() int {
 	return len(*s)
 }
 
-
 type myHeap struct {
 	data      []interface{}
 	predicate func(x, y int) bool
@@ -76,7 +76,7 @@ type myHeap struct {
 
 func NewHeap(data []interface{}, predicate func(x, y int) bool) *myHeap {
 	hp := &myHeap{
-		data: data,
+		data:      data,
 		predicate: predicate,
 	}
 	heap.Init(hp)
