@@ -71,10 +71,10 @@ func (s *stack) Len() int {
 
 type myHeap struct {
 	data      []interface{}
-	predicate func(x, y int) bool
+	predicate func(x, y interface{}) bool
 }
 
-func NewHeap(data []interface{}, predicate func(x, y int) bool) *myHeap {
+func NewHeap(data []interface{}, predicate func(x, y interface{}) bool) *myHeap {
 	hp := &myHeap{
 		data:      data,
 		predicate: predicate,
@@ -92,7 +92,7 @@ func (h myHeap) Swap(i, j int) {
 }
 
 func (h myHeap) Less(i, j int) bool {
-	return h.predicate(h.data[i].(int), h.data[j].(int))
+	return h.predicate(h.data[i], h.data[j])
 }
 
 func (h *myHeap) Push(x interface{}) {
@@ -110,3 +110,16 @@ func (h *myHeap) Pop() interface{} {
 // 区分heap.Push和自己实现的Push
 // predicate, tricky, 必须每次传递data,否则闭包还是调用之前的slice结构，slice伸缩了，predicate还是不知道;
 // predicate最好传递值，而不是index
+
+func upperBoundIndex(arr []int, target int) int {
+	left, right := 0, len(arr)
+	for left < right {
+		mid := left + (right-left)/2
+		if arr[mid] <= target {
+			left = mid + 1
+		} else {
+			right = mid
+		}
+	}
+	return right
+}
