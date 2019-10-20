@@ -1,4 +1,4 @@
-package A
+package amazon
 
 func topKFrequent(nums []int, topK int) []int {
 	mp := make(map[int]int)
