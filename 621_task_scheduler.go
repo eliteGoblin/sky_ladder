@@ -1,4 +1,4 @@
-package A
+package amazon
 
 import "sort"
 

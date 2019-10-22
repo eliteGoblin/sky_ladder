@@ -1,4 +1,4 @@
-package amzon
+package amazon
 
 func maximalRectangle(matrix [][]byte) int {
 	if len(matrix) == 0 {

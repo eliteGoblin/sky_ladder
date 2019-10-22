@@ -1,4 +1,4 @@
-package A
+package amazon
 
 func minDistance(word1 string, word2 string) int {
 	memo := make([][]int, len(word1))

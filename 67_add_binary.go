@@ -1,4 +1,4 @@
-package A
+package amazon
 
 func addBinary(a string, b string) string {
 	res := ""

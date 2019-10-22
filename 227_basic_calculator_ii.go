@@ -1,4 +1,4 @@
-package A
+package amazon
 
 // 1 + 1
 // 1 + 2 * 3

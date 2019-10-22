@@ -1,4 +1,4 @@
-package A
+package amazon
 
 func maxPoints(points [][]int) int {
 	if len(points) <= 1 {

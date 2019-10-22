@@ -1,4 +1,4 @@
-package A
+package amazon
 
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	res := make([][]int, 0)
