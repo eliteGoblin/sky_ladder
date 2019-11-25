@@ -93,6 +93,13 @@ func (h myHeap) Len() int {
 	return len(h.data)
 }
 
+func (h *myHeap) Top() interface{} {
+	if h.Len() > 0 {
+		return h.data[0]
+	}
+	return nil
+}
+
 func (h myHeap) Swap(i, j int) {
 	h.data[i], h.data[j] = h.data[j], h.data[i]
 }
