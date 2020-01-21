@@ -124,6 +124,7 @@ func (h *myHeap) Pop() interface{} {
 // predicate, tricky, 必须每次传递data,否则闭包还是调用之前的slice结构，slice伸缩了，predicate还是不知道;
 // predicate最好传递值，而不是index
 
+// first great than target
 func upperBoundIndex(arr []int, target int) int {
 	left, right := 0, len(arr)
 	for left < right {
@@ -136,3 +137,20 @@ func upperBoundIndex(arr []int, target int) int {
 	}
 	return right
 }
+
+// first index that >= target
+
+func lowerBoundIndex(arr []int, target int) int {
+	left, right := 0, len(arr)
+	for left < right {
+		mid := left + (right-left)/2
+		if arr[mid] < target {
+			left = mid + 1
+		} else {
+			right = mid
+		}
+	}
+	return right
+}
+
+// 作用: 排序的数组中，找出重复元素的range: 第一个>=和第一个>

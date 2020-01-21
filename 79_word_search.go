@@ -1,12 +1,11 @@
 package amazon
 
+import "fmt"
+
 func exist(board [][]byte, word string) bool {
-	if len(board) == 0 || len(board[0]) == 0 {
-		return false
-	}
 	for i := range board {
-		for j := range board[0] {
-			if findDFS(board, i, j, word) {
+		for j := range board[i] {
+			if contains(word, board, i, j) {
 				return true
 			}
 		}
@@ -14,36 +13,32 @@ func exist(board [][]byte, word string) bool {
 	return false
 }
 
-func findDFS(board [][]byte, i, j int, word string) bool {
+var move = [][2]int{
+	{-1, 0},
+	{1, 0},
+	{0, -1},
+	{0, 1},
+}
+
+func contains(word string, board [][]byte, i, j int) bool {
 	if word == "" {
+		fmt.Println("found")
 		return true
 	}
-	if i < 0 || i >= len(board) || j < 0 || j >= len(board[0]) ||
-		board[i][j] == '#' {
+	if i < 0 || i >= len(board) || j < 0 || j >= len(board[0]) {
 		return false
 	}
-	if board[i][j] != word[0] {
+	if board[i][j] == '#' || word[0] != board[i][j] {
 		return false
 	}
 	board[i][j] = '#'
-	defer func() {
-		board[i][j] = word[0]
-	}()
-	find := findDFS(board, i-1, j, word[1:])
-	if find {
-		return true
+	res := false
+	for k := range move {
+		res = contains(word[1:], board, i+move[k][0], j+move[k][1])
+		if res {
+			break
+		}
 	}
-	find = findDFS(board, i+1, j, word[1:])
-	if find {
-		return true
-	}
-	find = findDFS(board, i, j-1, word[1:])
-	if find {
-		return true
-	}
-	find = findDFS(board, i, j+1, word[1:])
-	if find {
-		return true
-	}
-	return false
+	board[i][j] = word[0]
+	return res
 }
