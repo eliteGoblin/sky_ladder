@@ -1,0 +1,3 @@
+2020.06.28 09:03:45 INFO  started: Metals version 0.9.0 in workspace '/home/frank.sun/git_repo/sky_ladder'
+2020.06.28 09:03:46 INFO  time: initialize in 0.84s
+2020.06.28 09:03:49 WARN  no build tool detected in workspace '/home/frank.sun/git_repo/sky_ladder'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
