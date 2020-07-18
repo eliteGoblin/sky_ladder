@@ -9,8 +9,8 @@ const (
 	int32Max  = int32(uint32Max >> 1)
 	int32Min  = -int32Max - 1
 	uintMax   = ^uint(0)
-	intMax    = int(uintMax >> 1)
-	intMin    = -intMax - 1
+	IntMax    = int(uintMax >> 1)
+	IntMin    = -IntMax - 1
 )
 
 type TreeNode struct {
@@ -23,8 +23,6 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
-
-
 
 type myHeap struct {
 	data      []interface{}
