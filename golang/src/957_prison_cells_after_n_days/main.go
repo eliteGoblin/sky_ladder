@@ -1,20 +1,31 @@
 package _957_prison_cells_after_n_days
 
 func prisonAfterNDays(cells []int, N int) []int {
+	n := N
 	var init [8]int
 	for i := 0; i < 8; i++ {
 		init[i] = cells[i]
 	}
 	mp := make(map[[8]int]int)
 	cur := init
-	for N > 0 {
-		mp[cur] = N
-		N--
-		cur = next(cur)
+
+	var cycle int
+	for n > 0 {
 		if _, ok := mp[cur]; ok {
-			cycle := mp[cur] - N
-			N %= cycle
+			cycle = mp[cur] - n
+			break
 		}
+		mp[cur] = n
+		cur = next(cur)
+		n--
+	}
+	if cycle > 0 {
+		N = (N-1)%cycle + 1 // 注意小技巧, 否则通不过N % cycle = 0情况
+	}
+	cur = init
+	for N > 0 {
+		cur = next(cur)
+		N--
 	}
 	res := make([]int, 8)
 	for i := 0; i < 8; i++ {

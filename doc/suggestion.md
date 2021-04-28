@@ -42,3 +42,8 @@
 ## Github 算法模板
 
 algorithm-pattern: https://github.com/greyireland/algorithm-pattern
+
+## 分类
+
+google doc 分类，按公司查询 
+https://docs.google.com/spreadsheets/d/1_8JSI9GnA2Cu4kwuMOMMmeQ8QjrYdTzELLxIu9Q2yCE/edit?usp=drive_web&ouid=117808823151713215485
