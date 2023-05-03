@@ -28,6 +28,18 @@ class Solution:
         
         return True
 
-s = Solution()
+class Solution:
+    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+        if len(coordinates) == 2:
+            return True
+        
+        a1, a2 = coordinates[0]
+        b1, b2 = coordinates[1]
 
-print(s.checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[1,8]]))
+        for i in range(2, len(coordinates)):
+            c1, c2 = coordinates[i]
+            # if AC parallel with AB
+            cross_product =  (b1 - a1) * (c1 - a2) + (b2 - a2) * (c1 - a1)
+            if cross_product != 0:
+                return False
+        return True

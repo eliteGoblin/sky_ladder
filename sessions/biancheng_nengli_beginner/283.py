@@ -11,3 +11,7 @@ class Solution:
 
         for i in range(next_fill_index, len(nums)):
             nums[i] = 0
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
