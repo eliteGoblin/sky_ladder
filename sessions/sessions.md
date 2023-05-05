@@ -1,9 +1,5 @@
-WIP:
-
-bianchengnengli basic
 
 
-*  [初级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-easy/)
 *  [中级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-medium/)
 *  [高级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-hard/)
 
@@ -16,7 +12,8 @@ bianchengnengli basic
 
 # bianchengnengli
 
-https://leetcode.cn/study-plan/programming-skills/?progress=xxl32cme
+Basic https://leetcode.cn/study-plan/programming-skills/?progress=xxl32cme
+
 
 
 # Github labuladong 的算法小抄 Star 115K
@@ -37,9 +34,8 @@ https://leetcode.cn/problem-list/2cktkvj/
 
 https://leetcode.cn/study-plan/data-structures/
 
-# LeetCode 75
 
-https://leetcode.cn/studyplan/leetcode-75/
+[LeetCode 75](https://leetcode.cn/studyplan/leetcode-75/)
 
 
 [LeetCode 热题 HOT 100](https://leetcode.cn/problem-list/2cktkvj/)
@@ -48,3 +44,10 @@ https://leetcode.cn/studyplan/leetcode-75/
 [程序员面试金典（第 6 版）](https://leetcode.cn/problem-list/xb9lfcwi/)
 
 [LeetCode 热题 100](https://leetcode.cn/studyplan/top-100-liked/)
+
+[面试经典 150 题 最经典 150 题，掌握面试所有知识点](https://leetcode.cn/studyplan/top-interview-150/)
+
+# Done
+
+*  DONE: [初级算法](https://leetcode.cn/leetbook/detail/top-interview-questions-easy/)
+*  Beginner: https://leetcode.cn/study-plan/programming-skills/?progress=xxl32cme
