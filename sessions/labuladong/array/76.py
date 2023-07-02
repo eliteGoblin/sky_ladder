@@ -39,3 +39,33 @@ class Solution:
         if not cover:
             return ""
         return min_window_str
+    
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        target = defaultdict(int)
+        for c in t:
+            target[c] += 1
+        window = defaultdict(int)
+
+        left, right = 0, 0
+        min_cover_str = ""
+
+        while right < len(s):
+            right_c = s[right]
+            window[right_c] += 1
+            right += 1
+
+            while left < right:
+                if not window_cover_target(window=window, target=target):
+                    break
+                if min_cover_str == "" or right - left < len(min_cover_str):
+                    min_cover_str = s[left:right]
+
+                left_c = s[left]
+                window[left_c] -= 1
+                if window[left_c] == 0:
+                    del window[left_c]
+                left += 1
+        
+        return min_cover_str
+    
